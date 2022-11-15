@@ -1,4 +1,4 @@
-import { Model, DataTypes } from "https://deno.land/x/denodb@v1.1.0/mod.ts";
+import { DataTypes, Model } from "https://deno.land/x/denodb@v1.1.0/mod.ts";
 
 import { getDB } from "../utils/db_utils.ts";
 

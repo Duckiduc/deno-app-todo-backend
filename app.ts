@@ -25,7 +25,7 @@ app.use(async (ctx, next) => {
   responseHeaders.set("Access-Control-Allow-Origin", "*");
   responseHeaders.set(
     "Access-Control-Allow-Methods",
-    "OPTIONS, GET, POST, PUT, DELETE"
+    "OPTIONS, GET, POST, PUT, DELETE",
   );
   responseHeaders.set("Access-Control-Allow-Headers", "Content-Type");
   await next();

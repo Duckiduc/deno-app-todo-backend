@@ -1,4 +1,7 @@
-import { Database, MySQLConnector } from "https://deno.land/x/denodb@v1.1.0/mod.ts";
+import {
+  Database,
+  MySQLConnector,
+} from "https://deno.land/x/denodb@v1.1.0/mod.ts";
 
 import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 

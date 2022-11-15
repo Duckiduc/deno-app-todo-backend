@@ -1,10 +1,10 @@
 import { Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 import {
-  getAllTodos,
   createNewTodo,
-  updateTodo,
   deleteTodo,
-} from "../controllers/todos.ts";
+  getAllTodos,
+  updateTodo,
+} from "../controllers/todo.ts";
 
 const router = new Router();
 
