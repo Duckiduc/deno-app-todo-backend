@@ -1,4 +1,4 @@
-import { Application } from "https://deno.land/x/oak@v6.5.0/mod.ts";
+import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 
 // import { connect } from "./utils/db_utils.ts";
 
