@@ -2,9 +2,9 @@ import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 
 import todosRoutes from "./routes/todo.ts";
 
-// import { connect } from "./utils/db_utils.ts";
+import { connect } from "./utils/db_utils.ts";
 
-// connect();
+connect();
 
 const app = new Application();
 
