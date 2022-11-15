@@ -33,4 +33,15 @@ export const getAllTodos = async (ctx: RouterContext<"/todos">) => {
   };
 };
 
+export const updateTodo = async (ctx: RouterContext<"/todo/:todoId">) => {
+  const todoId = ctx.params.todoId as string;
+  const body: Body = await ctx.request.body().value;
 
+  await Todo.where("id", todoId).update("text", body.text);
+
+  const updatedTodo = { text: body.text, id: todoId };
+  ctx.response.body = {
+    message: "ToDo updated",
+    todo: updatedTodo,
+  };
+};
