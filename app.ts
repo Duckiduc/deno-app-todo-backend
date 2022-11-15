@@ -1,5 +1,7 @@
 import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 
+import todosRoutes from "./routes/todo.ts";
+
 // import { connect } from "./utils/db_utils.ts";
 
 // connect();
@@ -32,6 +34,9 @@ app.use(async (ctx, next) => {
 app.use(async (ctx, next) => {
   await next();
 });
+
+app.use(todosRoutes.routes());
+app.use(todosRoutes.allowedMethods());
 
 const PORT = parseInt(Deno.env.get("PORT") as string) || 8000;
 await app.listen({ port: PORT });
