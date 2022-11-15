@@ -45,3 +45,11 @@ export const updateTodo = async (ctx: RouterContext<"/todo/:todoId">) => {
     todo: updatedTodo,
   };
 };
+
+export const deleteTodo = async (ctx: RouterContext<"/todo/:todoId">) => {
+  const todoId = ctx.params.todoId;
+  await Todo.where("id", todoId as string).delete();
+  ctx.response.body = {
+    message: "ToDo deleted",
+  };
+};
