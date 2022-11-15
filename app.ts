@@ -4,6 +4,10 @@ import todosRoutes from "./routes/todo.ts";
 
 import { connect } from "./utils/db_utils.ts";
 
+import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
+
+const { PORT } = config();
+
 connect();
 
 const app = new Application();
@@ -31,12 +35,12 @@ app.use(async (ctx, next) => {
   await next();
 });
 
-app.use(async (ctx, next) => {
+app.use(async (_ctx, next) => {
   await next();
 });
 
 app.use(todosRoutes.routes());
 app.use(todosRoutes.allowedMethods());
 
-const PORT = parseInt(Deno.env.get("PORT") as string) || 8000;
-await app.listen({ port: PORT });
+const DENO_PORT = parseInt(PORT as string) || 8000;
+await app.listen({ port: 8000 });

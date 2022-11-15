@@ -11,11 +11,11 @@ let db: Database;
 export const connect = () => {
   try {
     const connector = new MySQLConnector({
-      database: Deno.env.get(SQL_SCHEMA) as string,
-      host: Deno.env.get(SQL_HOST) as string,
-      username: Deno.env.get(SQL_USERNAME) as string,
-      password: Deno.env.get(SQL_PASSWORD) as string,
-      port: parseInt(Deno.env.get(SQL_PORT) as string),
+      database: SQL_SCHEMA as string,
+      host: SQL_HOST as string,
+      username: SQL_USERNAME as string,
+      password: SQL_PASSWORD as string,
+      port: parseInt(SQL_PORT as string),
     });
     db = new Database(connector);
   } catch (err) {
