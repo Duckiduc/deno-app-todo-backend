@@ -43,4 +43,4 @@ app.use(todosRoutes.routes());
 app.use(todosRoutes.allowedMethods());
 
 const DENO_PORT = parseInt(PORT as string) || 8000;
-await app.listen({ port: 8000 });
+await app.listen({ port: DENO_PORT });
